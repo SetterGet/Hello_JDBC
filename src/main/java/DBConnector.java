@@ -5,7 +5,7 @@ import java.sql.*;
 /**
  * Created by Dell on 14.03.2017.
  */
-public class DBWork {
+public class DBConnector {
 
     private Connection connection;
 
@@ -13,9 +13,10 @@ public class DBWork {
         return connection;
     }
 
-    public DBWork() {
+    public DBConnector() {
         try {
-            connection = DriverManager.getConnection(GlobalData.URL,GlobalData.USERNAME,GlobalData.PASSWORD);
+            connection = DriverManager.getConnection(GlobalData.URL,
+                    GlobalData.USERNAME,GlobalData.PASSWORD);
 
         } catch (SQLException e) {
             System.err.println("Failed");

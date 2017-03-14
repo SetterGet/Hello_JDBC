@@ -7,12 +7,12 @@ import java.sql.*;
  */
 public class Main {
     public static void main(String[] args) {
-        DBWork worker = new DBWork();
+        DBConnector connector = new DBConnector();
 
         String query = "select * from person";
 
         try {
-            Statement statement = worker.getConnection().createStatement();
+            Statement statement = connector.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
@@ -25,7 +25,6 @@ public class Main {
 
                 System.out.println(person);
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
